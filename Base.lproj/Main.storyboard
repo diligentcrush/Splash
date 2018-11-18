@@ -112,9 +112,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3c-nz-hiQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3c-nz-hiQ">
                                 <rect key="frame" x="20" y="31" width="50" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GTHaptikBold" family="GT Haptik" pointSize="17"/>
                                 <state key="normal" title="cancel">
                                     <color key="titleColor" red="0.93333333330000001" green="0.090196078430000007" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -123,9 +122,8 @@
                                     <action selector="cancelEdit:" destination="IjC-Rv-5G3" eventType="touchUpInside" id="ekP-ip-ikc"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFF-9S-dFt">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFF-9S-dFt">
                                 <rect key="frame" x="15" y="73" width="384" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tMq-uD-NH5">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="392"/>
@@ -134,30 +132,46 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="share your thoughts..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dSh-CQ-hXu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="share your thoughts..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dSh-CQ-hXu">
                                 <rect key="frame" x="20" y="481" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.42686170212765961" green="0.4189733402851083" blue="0.42246591921928639" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GTHaptikRegular" family="GT Haptik" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xem-0K-iR1">
-                                <rect key="frame" x="133" y="581" width="149" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.050980392156862744" green="0.31372549019607843" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xem-0K-iR1">
+                                <rect key="frame" x="364" y="31" width="35" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="GTHaptikMedium" family="GT Haptik" pointSize="17"/>
                                 <state key="normal" title="post">
-                                    <color key="titleColor" red="1" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.050980392156862744" green="0.31372549019607843" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7ne-l5-wi2" firstAttribute="trailing" secondItem="uFF-9S-dFt" secondAttribute="trailing" constant="15" id="2GZ-UH-lpC"/>
+                            <constraint firstItem="uFF-9S-dFt" firstAttribute="top" secondItem="7ne-l5-wi2" secondAttribute="top" constant="53" id="Agm-2s-b26"/>
+                            <constraint firstItem="xem-0K-iR1" firstAttribute="top" secondItem="7ne-l5-wi2" secondAttribute="top" constant="11" id="Czq-3s-fKp"/>
+                            <constraint firstItem="7ne-l5-wi2" firstAttribute="trailing" secondItem="xem-0K-iR1" secondAttribute="trailing" constant="15" id="EXo-eo-JMc"/>
+                            <constraint firstItem="J3c-nz-hiQ" firstAttribute="leading" secondItem="7ne-l5-wi2" secondAttribute="leading" constant="20" id="GzG-EK-n0q"/>
+                            <constraint firstItem="dSh-CQ-hXu" firstAttribute="centerX" secondItem="7ne-l5-wi2" secondAttribute="centerX" id="HJO-Fd-1iZ"/>
+                            <constraint firstItem="dSh-CQ-hXu" firstAttribute="top" secondItem="7ne-l5-wi2" secondAttribute="top" constant="461" id="N3w-CY-Od5"/>
+                            <constraint firstItem="J3c-nz-hiQ" firstAttribute="top" secondItem="7ne-l5-wi2" secondAttribute="top" constant="11" id="PpM-KQ-FX9"/>
+                            <constraint firstItem="7ne-l5-wi2" firstAttribute="bottom" secondItem="dSh-CQ-hXu" secondAttribute="bottom" constant="205" id="SzE-GV-2oh"/>
+                            <constraint firstItem="uFF-9S-dFt" firstAttribute="centerX" secondItem="7ne-l5-wi2" secondAttribute="centerX" id="Wen-xK-sPk"/>
+                            <constraint firstItem="dSh-CQ-hXu" firstAttribute="leading" secondItem="7ne-l5-wi2" secondAttribute="leading" constant="20" id="inj-rz-dtN"/>
+                            <constraint firstItem="uFF-9S-dFt" firstAttribute="leading" secondItem="7ne-l5-wi2" secondAttribute="leading" constant="15" id="kLv-q7-QPs"/>
+                            <constraint firstItem="7ne-l5-wi2" firstAttribute="bottom" secondItem="uFF-9S-dFt" secondAttribute="bottom" constant="279" id="sgH-bL-ei0"/>
+                            <constraint firstItem="7ne-l5-wi2" firstAttribute="trailing" secondItem="dSh-CQ-hXu" secondAttribute="trailing" constant="20" id="vIL-Uu-whi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7ne-l5-wi2"/>
                     </view>
                     <connections>
                         <outlet property="photo" destination="tMq-uD-NH5" id="4Sm-zq-sgy"/>
+                        <outlet property="photoCaption" destination="dSh-CQ-hXu" id="smn-1d-67q"/>
                         <outlet property="postButton" destination="xem-0K-iR1" id="7L5-ow-QkN"/>
+                        <outlet property="txtBC" destination="SzE-GV-2oh" id="6Sr-TM-lvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cvz-0j-aw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
