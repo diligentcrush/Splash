@@ -34,6 +34,14 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>GT-Haptik-Thin.otf</string>
+		<string>GT-Haptik-Bold.otf</string>
+		<string>GT-Haptik-Medium.otf</string>
+		<string>GT-Haptik-Regular.otf</string>
+		<string>GT-Haptik-Light.otf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
