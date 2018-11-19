@@ -96,8 +96,6 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func postButtonTap(_ sender: UIButton) {
         guard let image = photo.image else {return}
         guard let imageData = image.jpegData(compressionQuality: 1) else {return}
-        // guard let imageData = self.selectedImage, (imageData.jpegData(compressionQuality: 1) else {return}
-        // let storageRef = Database.database().reference()
             let photoID = NSUUID().uuidString
         
         let uploadRef = imageRef.child(photoID)

@@ -37,7 +37,7 @@
         <!--home-->
         <scene sceneID="VBf-ST-uFX">
             <objects>
-                <viewController id="esp-Qp-Dtu" sceneMemberID="viewController">
+                <viewController id="esp-Qp-Dtu" customClass="FeedViewController" customModule="Splash" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x2h-j3-VN6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zck-Gs-Jbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618.4000000000001" y="-145.27736131934034"/>
+            <point key="canvasLocation" x="1617.3913043478262" y="-145.92391304347828"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="kXY-zF-cyi">
@@ -123,7 +123,7 @@
                                 <rect key="frame" x="15" y="73" width="384" height="384"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tMq-uD-NH5">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="392"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="384"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
