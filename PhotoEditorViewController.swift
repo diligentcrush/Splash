@@ -20,7 +20,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var txtBC: NSLayoutConstraint!
     
     var selectedImage: UIImage?
-    var imageRef: StorageReference {
+    var imageStorageRef: StorageReference {
         return Storage.storage().reference().child("images")
     }
 
@@ -98,7 +98,19 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
         guard let imageData = image.jpegData(compressionQuality: 1) else {return}
             let photoID = NSUUID().uuidString
         
-        let uploadRef = imageRef.child(photoID)
+        let uploadRef = imageStorageRef.child(photoID)
+        let imageDbRef = Database.database().reference().child("posts").childByAutoId()
+        let postObject = [
+            "timestamp": [".sv":"timestamp"]
+        ] as [String:Any]
+        
+        imageDbRef.setValue(postObject, withCompletionBlock: {error, ref in
+            if error == nil {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                // Handle the error
+            }
+        })
         
         let uploadTask = uploadRef.putData(imageData, metadata: nil) { (metadata, error) in
             print("UPLOAD TASK FINISHED")

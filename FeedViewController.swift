@@ -15,6 +15,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     var homeFeed: UITableView!
     
+    var posts = [
+        Post(id: "1", author: "Donald Trump", text: "Bigly!"),
+        Post(id: "2", author: "Kanye West", text: "Haaeeh!")
+    ]
+    
     // var storageHandle: StorageHandle!
     // var imageRef: StorageReference!
     
@@ -42,8 +47,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         homeFeed.dataSource = self
         homeFeed.reloadData()
         
-        // homeFeed.dataSource = self
-        // loadPosts()
 
     }
     
@@ -52,13 +55,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = homeFeed.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+       // cell.set(post: Post)[indexPath.row]
         return cell
     }
+    
     /** func loadPosts() {
         let reference = Storage().reference().child("images/0EE1CA53-5B91-4FBA-9AC2-AD6C22A2BAF4")
         let imageDownload: UIImageView = self.imageDownload
@@ -76,15 +81,4 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 }
 
-
-/** extension FeedViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = homeFeed.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
-        cell.backgroundColor = UIColor.white
-        return cell
-    }
-} **/
 

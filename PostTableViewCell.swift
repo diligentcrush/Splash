@@ -11,10 +11,12 @@ import UIKit
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: UIButton!
+    @IBOutlet weak var postImage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        profileImage.layer.cornerRadius = profileImage.bounds.size.width / 2
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,4 +25,9 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func set(post:Post) {
+        
+    }
+    
 }
+
