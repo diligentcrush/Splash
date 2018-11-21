@@ -20,9 +20,9 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var txtBC: NSLayoutConstraint!
     
     var selectedImage: UIImage?
-    var imageStorageRef: StorageReference {
+    /** var imageStorageRef: StorageReference {
         return Storage.storage().reference().child("images")
-    }
+    } **/
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,14 +94,23 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func postButtonTap(_ sender: UIButton) {
+        guard let userProfile = UserService.currentUserProfile else {return}
         guard let image = photo.image else {return}
         guard let imageData = image.jpegData(compressionQuality: 1) else {return}
-            let photoID = NSUUID().uuidString
-        
-        let uploadRef = imageStorageRef.child(photoID)
         let imageDbRef = Database.database().reference().child("posts").childByAutoId()
+        
+        // let photoID = NSUUID().uuidString
+        
+        // let uploadRef = imageStorageRef.child(photoID)
+        
         let postObject = [
-            "timestamp": [".sv":"timestamp"]
+            "author": [
+                "username": userProfile.username,
+                "uid": userProfile.uid,
+                "profileUrl": userProfile.profileUrl.absoluteString
+            ],
+            "timestamp": [".sv":"timestamp"],
+            "photoCaption": photoCaption.text,
         ] as [String:Any]
         
         imageDbRef.setValue(postObject, withCompletionBlock: {error, ref in
@@ -112,7 +121,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
             }
         })
         
-        let uploadTask = uploadRef.putData(imageData, metadata: nil) { (metadata, error) in
+        /** let uploadTask = uploadRef.putData(imageData, metadata: nil) { (metadata, error) in
             print("UPLOAD TASK FINISHED")
             print(metadata ?? "NO METADATA")
             print(error ?? "NO ERROR")
@@ -122,7 +131,7 @@ class PhotoEditorViewController: UIViewController, UIImagePickerControllerDelega
             print(snapshot.progress ?? "NO MORE PROGRESS")
         }
         
-        uploadTask.resume()
+        uploadTask.resume() **/
         
         dismiss(animated: true, completion: nil)
         

@@ -19,8 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-      //  UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "GT-Haptik-Medium", size: 18)]
-       
+        let authListener = Auth.auth().addStateDidChangeListener{ auth, user in
+            
+            if user != nil {
+                UserService.observeUserProfile(user!.uid) {userProfile  in
+                    UserService.currentUserProfile = userProfile
+                }
+                //
+            } else {
+                UserService.currentUserProfile = nil
+            }
+        }
   
         return true
     }
